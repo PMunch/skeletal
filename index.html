@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Your page title here :)</title>
+  <title>Skeletal: Responsive, and variable CSS Boilerplate</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -15,33 +15,327 @@
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" type="text/css"
- href="http://mplus-fonts.sourceforge.jp/webfonts/basic_latin/mplus_webfonts.css">
+  <link href="https://fonts.googleapis.com/css?family=Taviraj:400,500,600&display=swap" rel="stylesheet">
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
 </head>
-<body>
+<body class="code-snippets-visible">
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
-    <div class="row">
-      <div class="one-half column" style="margin-top: 25%">
-        <h4>Basic Page</h4>
-        <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
+    <section class="u-center u-hero">
+      <div>
+        <h2 class="title">A dead simple, responsive, and variable boilerplate.</h2>
+        <a class="button button-primary" href="https://github.com/PMunch/skeletal/archive/v1.0.0.zip">Download</a>
       </div>
+      <div class="row">
+        <div class="four columns">
+          <img src="images/feather.svg"><br/>
+          Light as a feather at ~500 lines &amp; built with mobile in mind.
+        </div>
+        <div class="four columns">
+          <img src="images/pens.svg"><br/>
+          Styles designed to be a starting point, and are easy to edit.
+        </div>
+        <div class="four columns">
+          <img src="images/watch.svg"><br/>
+          Quick to start with zero compiling or installing necessary.
+        </div>
+      </div>
+    </section>
+
+      <ul class="navbar">
+      <li><a href="#grid"><h6>Grid</h6></a></li>
+      <li><a href="#typography"><h6>Typography</h6></a></li>
+      <li><a href="#buttons"><h6>Buttons</h6></a></li>
+      <li><a href="#forms"><h6>Forms</h6></a></li>
+      <li><a href="#lists"><h6>Lists</h6></a></li>
+      <li><a href="#code"><h6>Code</h6></a></li>
+      <li><a href="#tables"><h6>Tables</h6></a></li>
+      <li><a href="#navbar"><h6>Navbar</h6></a></li>
+      <li><a href="#queries"><h6>Media Queries</h6></a></li>
+      <li><a href="#utilities"><h6>Utilities</h6></a></li>
+    </ul>
+
+    <!-- Why use Skeletal -->
+    <div>
+      <h5 class="u-uppcase">Is Skeletal for you?</h5>
+      <p>Skeletal, like it's ancestor Skeleton, is perfect if you're embarking on a smaller project or if you just don't feel like you need all the bells and whistles of a larger framework. Skeletal only styles the most used HTML elements as well as including a grid, but that's often more than enough to get started. In fact <u>this site is built with Dynamic Skeleton</u>, and only has 30 lines of custom CSS to showcase the examples.</p>
+      <p>Skeletal is an attempt at taking the original Skeleton and making it even more user friendly. It takes all the good parts of Skeleton, and pairs it with modern CSS utilities that allows the usage of variables. The project is split in two, the <em>"static"</em> part which contains all the selectors and such and the <em>"dynamic"</em> part which exposes variables that can easily be changed to change the look and feel.</p>
+      <p>If you open your browsers CSS inspector and change the variables on the <code>:root</code> element you will see all the CSS change accordingly.</p>
+      <h6>Skeletal vs. Skeleton</h6>
+      <p>Skeleton has been around for many years and have garnered a lot of praise. So why create a new library that is so much alike? Skeletal was born from my frustration with modifying and using Skeleton across projects. I liked the idea of dropping a couple hundred lines of CSS in a file into my project and just magically have it look nice, but I kept matching the colours, font, and other styles to match the project I was working on. Skeletal uses modern CSS variables to separate the layouting logic from the easily customiseable parts. This has the benefit that changing simple things like colour is a breeze, and since the styles are composed through <code>calc</code> statements it's easier to keep them coherent.</p>
+      <hr/>
+    </div>
+
+    <!-- Grid -->
+    <div id="grid">
+      <h5 class="u-uppcase">The grid</h5>
+      <p>The grid is a <u>12-column fluid grid</u>, that shrinks with the browser/device at smaller sizes. The syntax is simple and it makes coding responsive much easier. Go ahead, resize the browser. </p>
+      <div class="example-grid">
+        <div class="row">
+          <div class="one column">One</div>
+          <div class="eleven columns">Eleven</div>
+        </div>
+        <div class="row">
+          <div class="two columns">Two</div>
+          <div class="ten columns">Ten</div>
+        </div>
+        <div class="row">
+          <div class="three columns">Three</div>
+          <div class="nine columns">Nine</div>
+        </div>
+        <div class="row">
+          <div class="four columns">Four</div>
+          <div class="eight columns">Eight</div>
+        </div>
+        <div class="row">
+          <div class="five columns">Five</div>
+          <div class="seven columns">Seven</div>
+        </div>
+        <div class="row">
+          <div class="six columns">Six</div>
+          <div class="six columns">Six</div>
+        </div>
+        <div class="row">
+          <div class="seven columns">Seven</div>
+          <div class="five columns">Five</div>
+        </div>
+        <div class="row">
+          <div class="eight columns">Eight</div>
+          <div class="four  columns">Four</div>
+        </div>
+        <div class="row">
+          <div class="nine columns">Nine</div>
+          <div class="three columns">Three</div>
+        </div>
+        <div class="row">
+          <div class="ten columns">Ten</div>
+          <div class="two columns">Two</div>
+        </div>
+        <div class="row">
+          <div class="eleven columns">Eleven</div>
+          <div class="one column">One</div>
+        </div>
+      </div>
+      <hr/>
+    </div>
+
+    <!-- Typography -->
+    <div id="typography">
+      <h5 class="u-uppcase">Typography</h5>
+      <div>
+        <p>Type is all set with the <code>rems</code>, although like Skeleton all measurements are still base 10 so an <code>&lt;h1&gt;</code> with <code>5.0rem</code> font-size just means <code>50px</code>.</p>
+        <div class="row">
+          <div class="six columns">
+            <p><strong>The default typography base</strong> is <a href="http://www.google.com/fonts/specimen/Taviraj">Taviraj</a> served by Google, set at 1.6rem (16px) over a 1.7 line height (170%, 27px). Other type basics like <a href="#">anchors</a>, <strong>strong</strong>, <em>emphasis</em>, and <u>underline</u> are all obviously included.</p>
+            <p><strong>Headings</strong> create a family of distinct sizes and styles. They are calculated by a base size and growth rate, so they are easy to customise to your own design. The smallest heading is set as a bold uppercase, but otherwise normally sized text, and after that they increase in size, but decrease in weight, leaving a pleasent set of styles.</p>
+          </div>
+          <div class="six columns">
+            <h1>Heading<span class="heading-font-size"> <code>&lt;h1&gt;</code></span></h1>
+            <h2>Heading<span class="heading-font-size"> <code>&lt;h2&gt;</code></span></h2>
+            <h3>Heading<span class="heading-font-size"> <code>&lt;h3&gt;</code></span></h3>
+            <h4>Heading<span class="heading-font-size"> <code>&lt;h4&gt;</code></span></h4>
+            <h5>Heading<span class="heading-font-size"> <code>&lt;h5&gt;</code></span></h5>
+            <h6>Heading<span class="heading-font-size"> <code>&lt;h6&gt;</code></span></h6>
+          </div>
+        </div>
+      </div>
+      <hr/>
+    </div>
+
+    <!-- Buttons -->
+    <div id="buttons">
+      <h5 class="u-uppcase">Buttons</h5>
+      <p>Buttons come in two basic flavors in Skeleton. The standard <code>&lt;button&gt;</code> element is plain, whereas the <code>.button-primary</code> button is vibrant and prominent. Button styles are applied to a number of appropriate form elements, but can also be arbitrarily attached to anchors with a <code>.button</code> class. Their size is by default calulated by font-size, and the same as the various form element input fields. A single variable change can change either all buttons, or all buttons and form elements to whatever size you want, the padding is auto-calculated to be a good fit.</p>
+      <div>
+        <div>
+          <a class="button" href="#">Anchor button</a>
+          <button>Button element</button>
+          <input type="submit" value="submit input">
+          <input type="button" value="button input">
+        </div>
+        <div>
+          <a class="button button-primary" href="#">Anchor button</a>
+          <button class="button-primary">Button element</button>
+          <input class="button-primary" type="submit" value="submit input">
+          <input class="button-primary" type="button" value="button input">
+        </div>
+      </div>
+      <hr/>
+    </div>
+
+    <!-- Forms -->
+    <div id="forms">
+      <h5 class="u-uppcase">Forms</h5>
+      <p>Forms are a huge pain, but hopefully these styles make it a bit easier. All inputs, select, and buttons are normalized for a common height cross-browser so inputs can be stacked or placed alongside each other.</p>
+      <div>
+        <form>
+          <div class="row">
+            <div class="six columns">
+              <label for="exampleEmailInput">Your email</label>
+              <input class="u-full-width" type="email" placeholder="test@mailbox.com" id="exampleEmailInput">
+            </div>
+            <div class="six columns">
+              <label for="exampleRecipientInput">Reason for contacting</label>
+              <select class="u-full-width" id="exampleRecipientInput">
+                <option value="Option 1">Questions</option>
+                <option value="Option 2">Admiration</option>
+                <option value="Option 3">Can I get your number?</option>
+              </select>
+            </div>
+          </div>
+          <label for="exampleMessage">Message</label>
+          <textarea class="u-full-width" placeholder="Hi Dave &hellip;" id="exampleMessage"></textarea>
+          <label class="u-pull-right">
+            <input type="checkbox">
+            <span>Send a copy to yourself</span>
+          </label>
+          <input class="button-primary" type="submit" value="Submit">
+        </form>
+      </div>
+      <hr/>
+    </div>
+
+    <!-- Lists -->
+    <div id="lists">
+      <h5 class="u-uppcase">Lists</h5>
+      <div class="row">
+        <div class="six columns">
+          <ul>
+            <li>Unordered lists have basic styles</li>
+            <li>
+              They use the circle list style
+              <ul>
+                <li>Nested lists styled to feel right</li>
+                <li>Can nest either type of list into the other</li>
+              </ul>
+            </li>
+            <li>Just more list items</li>
+          </ul>
+        </div>
+        <div class="six columns">
+          <ol>
+            <li>Ordered lists also have basic styles</li>
+            <li>
+              They use the decimal list style
+              <ul>
+                <li>Ordered and unordered can be nested</li>
+                <li>Can nest either type of list into the other</li>
+              </ul>
+            </li>
+            <li>Last list item just for fun</li>
+          </ol>
+        </div>
+      </div>
+      <hr/>
+    </div>
+
+    <!-- Code -->
+    <div id="code">
+      <h5 class="u-uppcase">Code</h5>
+      <p>Code styling is kept basic – just wrap anything in a <code>&lt;code&gt;</code> and it will appear like <code>this</code>. For blocks of code, wrap a <code>&lt;code&gt;</code> with a <code>&lt;pre&gt;</code>.</p>
+      <div>
+<pre><code>.some-class {
+  background-color: red;
+}</code></pre>
+      </div>
+      <hr/>
+    </div>
+
+    <!-- Tables -->
+    <div id="tables">
+      <h5 class="u-uppcase">Tables</h5>
+      <p>Tables have their padding defined based on font size, so no matter the size you set they will just feel right.</p>
+      <div>
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Sex</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dave Gamache</td>
+              <td>26</td>
+              <td>Male</td>
+              <td>San Francisco</td>
+            </tr>
+            <tr>
+              <td>Dwayne Johnson</td>
+              <td>42</td>
+              <td>Male</td>
+              <td>Hayward</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Be sure to use properly formed table markup with <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code> when building a <code>table</code>.</p>
+      <hr/>
+    </div>
+
+    <!-- Queries -->
+    <div id="queries">
+      <h5 class="u-uppcase">Media queries</h5>
+      <p>Skeletal uses media queries to serve its scalable grid, but also has a list of queries for convenience of styling your site across devices. The queries are mobile-first, meaning they target <code>min-width</code>. Mobile-first queries are how Dynamic Skeleton's grid is built and is the preferrable method of organizing CSS. It means all styles outside of a query apply to all devices, then larger devices are targeted for enhancement. This prevents small devices from having to parse tons of unused CSS. The sizes for the queries are:</p>
+      <div class="row">
+        <div class="six columns">
+          <ul>
+            <li><strong>Desktop HD</strong>: 1200px</li>
+            <li><strong>Desktop</strong>: 1000px</li>
+            <li><strong>Tablet</strong>: 750px</li>
+          </ul>
+        </div>
+        <div class="six columns">
+          <ul>
+            <li><strong>Phablet</strong>: 550px</li>
+            <li><strong>Mobile</strong>: 400px</li>
+          </ul>
+        </div>
+      </div>
+      <hr/>
+    </div>
+
+    <!-- Navbar -->
+    <div id="navbar">
+      <h5 class="u-uppcase">Navigation bar</h5>
+      <p>While not strictly speaking a HTML element in its own right the navigation bar is a specialisation of a list of links. In Skeletal you can apply a <code>navbar</code> class to such a list and it will be styled as a horisontal list of elements instead of a regular list. This is how the navigation bar on this site was made, and can look like this:</p>
+      <ul class="navbar">
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#typography">Typography</a></li>
+        <li><a href="#buttons">Buttons</a></li>
+        <li class="u-pull-right"><a href="#utilities">Utilities</a></li>
+      </ul>
+      <p>Note that you can also use <code>u-pull-right</code> from the next section to place elements to the right of the navbar.</p>
+      <hr/>
+    </div>
+
+    <!-- Utilities and Misc. -->
+    <div id="utilities">
+      <h5 class="u-uppcase">Utilities</h5>
+      <p>Skeletal has a number of small utility classes that act as easy-to-use helpers. Sometimes it's better to use a utility class than create a whole new class just to float an element. The list of utilites is slightly longer than in the original Skeleton and includes:</p>
+      <div class="row">
+        <div class="u-pull-right bordered"><code>u-pull-right</code> for floating right</div>
+        <div class="u-pull-left bordered"><code>u-pull-left</code> for floating left</div>
+      </div>
+      <div class="u-full-width bordered"><code>u-full-width</code> for taking up all space</div>
+      <div class="u-center bordered"><code>u-center</code> for centering content</div>
+      <div class="u-uppcase bordered"><code>u-uppcase</code> to transform things to uppercase</div>
+      <div class="u-hero bordered"><code>u-hero</code> to create a hero slide<h5>That puts lots of lovely whitespace around your items!</h5><p>It's actually what's used on this page to create the title part.</p></div>
     </div>
   </div>
-
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>
