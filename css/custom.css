@@ -1,0 +1,30 @@
+.title {
+  font-weight: 400;
+}
+.example-grid .column,
+.example-grid .columns {
+  background-color: #eee;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+@media (min-width: 550px) {
+  .example-grid .column,
+  .example-grid .columns {
+    margin-bottom: 1.5rem;
+  }
+}
+.heading-font-size {
+  font-size: 1.2rem;
+  color: #999;
+  font-weight: 400;
+  text-transform: none;
+}
+.bordered {
+  border: 1px solid #999;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+}
