@@ -28,3 +28,9 @@
   margin-bottom: 0.5rem;
   padding: 0.5rem;
 }
+.navbar {
+  position: sticky;
+  top: -1px;
+  background-color: #fff;
+  z-index: 1;
+}
