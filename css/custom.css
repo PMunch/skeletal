@@ -36,3 +36,12 @@
   display: flex;
   flex-wrap: wrap;
 }
+input[type="range"], input[type="color"] {
+  width: 7.5em;
+}
+input[type="range"] {
+  height: var(--element-height);
+}
+input[type="color"] {
+  height: calc(var(--element-height) - 4px);
+}

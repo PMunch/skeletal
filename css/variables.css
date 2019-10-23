@@ -20,7 +20,7 @@
 :root {
   /* Globals */
   --line-height: calc(1em * 1.7); /* Set this way so it can be used in calculations */
-  --element-padding: 8px;
+  --element-padding: 0.8rem;
   --element-border: 1px;
   --element-height: calc(var(--line-height) + var(--element-padding)*2 + var(--element-border)*2);
   --border-radius: 4px;
@@ -28,6 +28,7 @@
   --main-color-contrast: #FFF;
   --activated-color: #1EAEDB;
   --activated-color-contrast: #FFF;
+  --border-color: #D1D1D1;
   /* Basics */
   --container-max-width: 800px;
   --text-color: #222;
@@ -50,11 +51,11 @@
   --button-line-height: calc(var(--element-height) - var(--element-border));
   --button-border: var(--element-border) solid;
   --button-border-radius: var(--border-radius);
-  --button-padding-leftright: 30px;
+  --button-padding-leftright: 3em;
   /* Basic button */
   --button-color: #555;
   --button-background-color: var(--background-color);
-  --button-border-color: #bbb;
+  --button-border-color: var(--border-color);
   --button-color-focus: #333;
   --button-background-color-focus: var(--background-color);
   --button-border-color-focus: #888;
@@ -71,7 +72,7 @@
   --input-height: var(--element-height);
   --textarea-min-height: calc((var(--element-height) - var(--element-padding) - var(--element-border))*2);
   --input-border: var(--element-border) solid;
-  --input-border-color: #D1D1D1;
+  --input-border-color: var(--border-color);
   --input-border-color-focus: var(--main-color);
   --input-border-radius: var(--border-radius);
   --input-color: var(--text-color);
@@ -82,7 +83,7 @@
   --code-color: var(--text-color);
   --code-background-color: #FAFAFA;
   --code-border: var(--element-border) solid;
-  --code-border-color: #E1E1E1;
+  --code-border-color: var(--border-color);
   --code-border-radius: var(--border-radius);
   --code-block-color: var(--code-color);
   --code-block-background-color: var(--code-background-color);
@@ -90,12 +91,12 @@
   --code-block-border-color: var(--code-border-color);
   --code-block-border-radius: var(--code-border-radius);
   /* Tables */
-  --td-border-bottom: 1px solid #E1E1E1;
+  --td-border-bottom: 1px solid var(--border-color);
   /* Horizontal rule */
-  --hr-border-top: 1px solid #E1E1E1;
+  --hr-border-top: 1px solid var(--border-color);
   /* Navbar */
-  --navbar-border-top: 1px solid #E1E1E1;
-  --navbar-border-bottom: 1px solid #E1E1E1;
+  --navbar-border-top: 1px solid var(--border-color);
+  --navbar-border-bottom: 1px solid var(--border-color);
   /* Hero */
   --hero-padding: 6vh;
 }

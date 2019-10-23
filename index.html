@@ -76,7 +76,7 @@
       <h5 class="u-uppcase">Is Skeletal for you?</h5>
       <p>Skeletal, like it's ancestor Skeleton, is perfect if you're embarking on a smaller project or if you just don't feel like you need all the bells and whistles of a larger framework. Skeletal only styles the most used HTML elements as well as including a grid, but that's often more than enough to get started. In fact <u>this site is built with Skeletal</u>, and only has ~40 lines of custom CSS to showcase the examples and make the navbar stick when scrolling.</p>
       <p>Skeletal is an attempt at taking the original Skeleton and making it even more user friendly. It takes all the good parts of Skeleton, and pairs it with modern CSS utilities that allows the usage of variables. The project is split in two, the <em>"static"</em> part which contains all the selectors and such and the <em>"dynamic"</em> part which exposes variables that can easily be changed to change the look and feel.</p>
-      <p>If you open your browsers CSS inspector and change the variables on the <code>:root</code> element you will see all the CSS change accordingly.</p>
+      <p>Throughout this page you will find sliders and selectors where you can change various variables for this site. If you open your browsers inspector you can see the whole list of 70 variables and how they are connected to each other. This is the main benefit of Skeletal, to easily be able to change the stylesheet without having to dig through the CSS sources, just update a couple of variables to match the style you had in mind and voilà!</p>
       <p>Like Skeletal and want to keep up to date, help develop it, or just show your appreciation? Here are some GitHub links for you!</p>
       <p>
         <a class="github-button" href="https://github.com/PMunch/skeletal" data-icon="octicon-star" data-show-count="true" aria-label="Star PMunch/skeletal on GitHub">Star</a>&nbsp;
@@ -84,7 +84,7 @@
         <a class="github-button" href="https://github.com/sponsors/PMunch" data-icon="octicon-heart" aria-label="Sponsor @PMunch on GitHub">Sponsor</a>
       </p>
       <h6>Skeletal vs. Skeleton</h6>
-      <p>Skeleton has been around for many years and have garnered a lot of praise. So why create a new library that is so much alike? Skeletal was born from my frustration with modifying and using Skeleton across projects. I liked the idea of dropping a couple hundred lines of CSS in a file into my project and just magically have it look nice, but I kept matching the colours, font, and other styles to match the project I was working on. Skeletal uses modern CSS variables to separate the layouting logic from the easily customiseable parts. This has the benefit that changing simple things like colour is a breeze, and since the styles are composed through <code>calc</code> statements it's easier to keep them coherent.</p>
+      <p>Skeleton has been around for many years and have garnered a lot of praise. So why create a new library that is so much alike? Skeletal was born from my frustration with modifying and using Skeleton across projects. I liked the idea of dropping a couple hundred lines of CSS in a file into my project and just magically have it look nice, but I kept matching the colours, font, and other styles to the project I was working on. Skeletal uses modern CSS variables to separate the layouting logic from the easily customiseable parts. This has the benefit that changing simple things like colour is a breeze, and since the styles are composed through <code>calc</code> statements it's easier to keep it all coherent.</p>
       <hr/>
     </div>
 
@@ -232,6 +232,30 @@
             <h6>Heading<span class="heading-font-size"> <code>&lt;h6&gt;</code></span></h6>
           </div>
         </div>
+        <p>Since all of this is based on variables and calculations, try playing with these sliders. All they do is change the base variables that are used to calculate some of these styles, and changing them will change this page live!</p>
+        <p>
+          <div class="row">
+            <div class="one-third column u-center">
+              <label for="--font-size">--font-size</label>
+              <input id="--font-size" type="range" min="0.5" max="3" value="1.6" step="0.1" onchange="setVariable('--font-size', this.value+'rem')"><br/>
+              <button onclick="setVariable('--font-size', '1.6rem', 1.6)">Reset!</button>
+            </div>
+            <div class="one-third column u-center">
+              <label for="--font-family">--font-family</label>
+              <select id="--font-family" onchange="setVariable('--font-family', this.value)" style="width:7.5em;">
+                <option value="Taviraj">Taviraj</option>
+                <option value="sans">sans</option>
+                <option value="serif">serif</option>
+              </select><br/>
+              <button onclick="setVariable('--font-family', 'Taviraj', 'Taviraj')">Reset!</button>
+            </div>
+            <div class="one-third column u-center">
+              <label for="--heading-increase-pitch">--heading-increase-pitch</label>
+              <input id="--heading-increase-pitch" type="range" min="0.1" max="2" value="0.7" step="0.1" onchange="setVariable('--heading-increase-pitch', this.value+'rem')"><br/>
+              <button onclick="setVariable('--heading-increase-pitch', '0.7rem', 0.7)">Reset!</button>
+            </div>
+          </div>
+        </p>
       </div>
       <pre><code>&lt;!-- Standard Headings --&gt;
 &lt;h1&gt;Heading&lt;/h1&gt;
@@ -256,7 +280,7 @@
     <div id="buttons">
       <h5 class="u-uppcase">Buttons</h5>
       <p>Buttons come in two basic flavors in Skeleton. The standard <code>&lt;button&gt;</code> element is plain, whereas the <code>.button-primary</code> button is vibrant and prominent. Button styles are applied to a number of appropriate form elements, but can also be arbitrarily attached to anchors with a <code>.button</code> class. Their size is by default calulated by font-size, and the same as the various form element input fields. A single variable change can change either all buttons, or all buttons and form elements to whatever size you want, the padding is auto-calculated to be a good fit.</p>
-      <div>
+      <p>
         <div>
           <a class="button" href="#">Anchor button</a>
           <button>Button element</button>
@@ -269,7 +293,27 @@
           <input class="button-primary" type="submit" value="submit input">
           <input class="button-primary" type="button" value="button input">
         </div>
-      </div>
+      </p>
+      <p>In this case we are changing variables that are more global than in the last example. See for example how changing the <code>--main-color</code> property also changes the colour of an active input box in the next section. Many elements are also defined to follow the background colour, but be aware that this might look strange without also changing their border colours.</p>
+      <p>
+        <div class="row">
+          <div class="one-third column u-center">
+            <label for="--main-color">--main-color</label>
+            <input id="--main-color" type="color" value="#33C3F0" onchange="setVariable('--main-color', this.value)"><br/>
+            <button onclick="setVariable('--main-color', '#33C3F0', '#33C3F0')">Reset!</button>
+          </div>
+          <div class="one-third column u-center">
+            <label for="--border-color">--border-color</label>
+            <input id="--border-color" type="color" value="#D1D1D1" onchange="setVariable('--border-color', this.value)"><br/>
+            <button onclick="setVariable('--border-color', '#D1D1D1', '#D1D1D1')">Reset!</button>
+          </div>
+          <div class="one-third column u-center">
+            <label for="--background-color">--background-color</label>
+            <input id="--background-color" type="color" value="#FFFFFF" onchange="setVariable('--background-color', this.value)"><br/>
+            <button onclick="setVariable('--background-color', '#FFFFFF', '#FFFFFF')">Reset!</button>
+          </div>
+        </div>
+      </p>
       <pre><code>&lt;!-- Standard buttons --&gt;
 &lt;a class="button" href="#"&gt;Anchor button&lt;/a&gt;
 &lt;button&gt;Button element&lt;/button&gt;
@@ -313,6 +357,20 @@
           <input class="button-primary" type="submit" value="Submit">
         </form>
       </div>
+      <p>
+        <div class="row">
+          <div class="one-half column u-center">
+            <label for="--element-padding">--element-padding</label>
+            <input id="--element-padding" type="range" min="0.1" max="2" value="0.8" step="0.1" width="200px" onchange="setVariable('--element-padding', this.value+'rem')"><br/>
+            <button onclick="setVariable('--element-padding', '0.8rem', 0.8)">Reset!</button>
+          </div>
+          <div class="one-half column u-center">
+            <label for="--input-background-color">--input-background-color</label>
+            <input id="--input-background-color" type="color" value="#FFFFFF" onchange="setVariable('--input-background-color', this.value)"><br/>
+            <button onclick="setVariable('--input-background-color', 'var(--background-color)', '#FFFFFF')">Reset!</button>
+          </div>
+        </div>
+      </p>
       <pre><code>&lt;!-- The above form looks like this --&gt;
 &lt;form&gt;
   &lt;div class="row"&gt;
@@ -341,6 +399,38 @@
 &lt;!-- Always wrap checkbox and radio inputs in a label and use a &lt;span class="label-body"&gt; inside of it --&gt;
 
 &lt;!-- Note: The class .u-full-width is just a utility class shorthand for width: 100% --&gt;</code></pre>
+      <hr/>
+    </div>
+
+    <!-- Code -->
+    <div id="code">
+      <h5 class="u-uppcase">Code</h5>
+      <p>Code styling is kept basic – just wrap anything in a <code>&lt;code&gt;</code> and it will appear like <code>this</code>. For blocks of code, wrap a <code>&lt;code&gt;</code> with a <code>&lt;pre&gt;</code>.</p>
+      <div>
+<pre><code>.some-class {
+  background-color: red;
+}</code></pre>
+      </div>
+      <p>Unfortunately it is not possible to easily mix colours with CSS variables, so all the colours needs to be set separately. Here you can try to change the global <code>--text-color</code> and the very specific <code>--code-background-color</code></p>
+      <p>
+        <div class="row">
+          <div class="one-half column u-center">
+            <label for="--text-color">--text-color</label>
+            <input id="--text-color" type="color" value="#222222" onchange="setVariable('--text-color', this.value)"><br/>
+            <button onclick="setVariable('--text-color', '#222222', '#222222')">Reset!</button>
+          </div>
+          <div class="one-half column u-center">
+            <label for="--code-background-color">--code-background-color</label>
+            <input id="--code-background-color" type="color" value="#FAFAFA" onchange="setVariable('--code-background-color', this.value)"><br/>
+            <button onclick="setVariable('--code-background-color', '#FAFAFA', '#FAFAFA')">Reset!</button>
+          </div>
+        </div>
+      </p>
+      <pre><code>&lt;pre&gt;&lt;code&gt;.some-class {
+  background-color: red;
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- Remember every whitespace and break will be preserved in a &lt;pre&gt;, including indentation in your code --&gt;</code></pre>
       <hr/>
     </div>
 
@@ -388,23 +478,6 @@
 &lt;/ul&gt;
 
 &lt;!-- Easily substitute any &lt;ul&gt; or an &lt;ol&gt; to get number lists or sublists --&gt;</code></pre>
-      <hr/>
-    </div>
-
-    <!-- Code -->
-    <div id="code">
-      <h5 class="u-uppcase">Code</h5>
-      <p>Code styling is kept basic – just wrap anything in a <code>&lt;code&gt;</code> and it will appear like <code>this</code>. For blocks of code, wrap a <code>&lt;code&gt;</code> with a <code>&lt;pre&gt;</code>.</p>
-      <div>
-<pre><code>.some-class {
-  background-color: red;
-}</code></pre>
-      </div>
-      <pre><code>&lt;pre&gt;&lt;code&gt;.some-class {
-  background-color: red;
-}&lt;/code&gt;&lt;/pre&gt;
-
-&lt;!-- Remember every whitespace and break will be preserved in a &lt;pre&gt;, including indentation in your code --&gt;</code></pre>
       <hr/>
     </div>
 
@@ -564,5 +637,13 @@
 &lt;/div&gt;</code></pre>
     </div>
   </div>
+  <script>
+    function setVariable(variable, value, rawvalue) {
+      document.documentElement.style.setProperty(variable, value);
+      if (typeof rawvalue !== 'undefined') {
+        document.getElementById(variable).value = rawvalue;
+      }
+    }
+  </script>
 </body>
 </html>
