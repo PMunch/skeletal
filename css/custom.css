@@ -1,8 +1,8 @@
 .title {
   font-weight: 400;
 }
-.example-grid .column,
-.example-grid .columns {
+.example-grid .column > div,
+.example-grid .columns > div {
   background-color: #eee;
   border-radius: 4px;
   text-align: center;
@@ -11,8 +11,8 @@
   margin-bottom: 0.75rem;
 }
 @media (min-width: 550px) {
-  .example-grid .column,
-  .example-grid .columns {
+  .example-grid .column > div,
+  .example-grid .columns > div {
     margin-bottom: 1.5rem;
   }
 }
@@ -28,7 +28,7 @@
   margin-bottom: 0.5rem;
   padding: 0.5rem;
 }
-.navbar {
+.navbar#navigation {
   position: sticky;
   top: -1px;
   background-color: #fff;

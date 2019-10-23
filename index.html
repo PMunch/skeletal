@@ -36,7 +36,7 @@
     <section class="u-center u-hero">
       <div>
         <h2 class="title">A dead simple, responsive, and variable boilerplate.</h2>
-        <a class="button button-primary" href="https://github.com/PMunch/skeletal/archive/v1.0.0.zip">Download</a>
+        <a class="button button-primary" href="https://github.com/PMunch/skeletal/archive/v1.1.0.zip">Download</a>
       </div>
       <div class="row">
         <div class="four columns">
@@ -54,7 +54,7 @@
       </div>
     </section>
 
-      <ul class="navbar u-center">
+    <ul id="navigation" class="navbar u-center">
       <li><a href="#grid"><h6>Grid</h6></a></li>
       <li><a href="#typography"><h6>Typography</h6></a></li>
       <li><a href="#buttons"><h6>Buttons</h6></a></li>
@@ -81,51 +81,60 @@
     <!-- Grid -->
     <div id="grid">
       <h5 class="u-uppcase">The grid</h5>
-      <p>The grid is a <u>12-column fluid grid</u>, that shrinks with the browser/device at smaller sizes. The syntax is simple and it makes coding responsive much easier. Go ahead, resize the browser. </p>
+      <p>The grid is a <u>12-column fluid grid</u>, and has been completely rewritten to use the <code>flex-box</code>. It shrinks with the browser/device at smaller sizes and the syntax is simple making coding responsive much easier. Go ahead, resize the browser.</p>
       <div class="example-grid">
         <div class="row">
-          <div class="one column">One</div>
-          <div class="eleven columns">Eleven</div>
+          <div class="one column"><div>One</div></div>
+          <div class="eleven columns"><div>Eleven</div></div>
         </div>
         <div class="row">
-          <div class="two columns">Two</div>
-          <div class="ten columns">Ten</div>
+          <div class="two columns"><div>Two</div></div>
+          <div class="ten columns"><div>Ten</div></div>
         </div>
         <div class="row">
-          <div class="three columns">Three</div>
-          <div class="nine columns">Nine</div>
+          <div class="three columns"><div>Three</div></div>
+          <div class="nine columns"><div>Nine</div></div>
         </div>
         <div class="row">
-          <div class="four columns">Four</div>
-          <div class="eight columns">Eight</div>
+          <div class="four columns"><div>Four</div></div>
+          <div class="eight columns"><div>Eight</div></div>
         </div>
         <div class="row">
-          <div class="five columns">Five</div>
-          <div class="seven columns">Seven</div>
+          <div class="five columns"><div>Five</div></div>
+          <div class="seven columns"><div>Seven</div></div>
         </div>
         <div class="row">
-          <div class="six columns">Six</div>
-          <div class="six columns">Six</div>
+          <div class="six columns"><div>Six</div></div>
+          <div class="six columns"><div>Six</div></div>
         </div>
         <div class="row">
-          <div class="seven columns">Seven</div>
-          <div class="five columns">Five</div>
+          <div class="seven columns"><div>Seven</div></div>
+          <div class="five columns"><div>Five</div></div>
         </div>
         <div class="row">
-          <div class="eight columns">Eight</div>
-          <div class="four  columns">Four</div>
+          <div class="eight columns"><div>Eight</div></div>
+          <div class="four  columns"><div>Four</div></div>
         </div>
         <div class="row">
-          <div class="nine columns">Nine</div>
-          <div class="three columns">Three</div>
+          <div class="nine columns"><div>Nine</div></div>
+          <div class="three columns"><div>Three</div></div>
         </div>
         <div class="row">
-          <div class="ten columns">Ten</div>
-          <div class="two columns">Two</div>
+          <div class="ten columns"><div>Ten</div></div>
+          <div class="two columns"><div>Two</div></div>
         </div>
         <div class="row">
-          <div class="eleven columns">Eleven</div>
-          <div class="one column">One</div>
+          <div class="eleven columns"><div>Eleven</div></div>
+          <div class="one column"><div>One</div></div>
+        </div>
+        <div class="row">
+          <div class="two-thirds columns offset-by-four"><div>Two thirds, offset by four</div></div>
+        </div>
+        <div class="row">
+          <div class="one-half columns offset-by-six"><div>One half, offset by six</div></div>
+        </div>
+        <div class="row">
+          <div class="one-third columns offset-by-eight"><div>One thirds, offset by eight</div></div>
         </div>
       </div>
       <pre><code>&lt;!-- .container is main centered wrapper --&gt;
@@ -156,6 +165,41 @@
 &lt;/div&gt;
 
 &lt;!-- Note: columns can be nested, but it's not recommended since Skeleton's grid has %-based gutters, meaning a nested grid results in variable with gutters (which can end up being *really* small on certain browser/device sizes) --&gt;</code></pre>
+      <p>Since the new grid uses flex boxes you can easily do complex things like centering or equidistantly space elements by using the <code>justify-content</code> property.</p>
+      <div class="example-grid">
+        <div class="row" style="justify-content: center">
+          <div class="two columns"><div>justify</div></div>
+          <div class="two columns"><div>content</div></div>
+          <div class="two columns"><div>center</div></div>
+        </div>
+        <div class="row" style="justify-content: space-evenly">
+          <div class="two columns"><div>justify</div></div>
+          <div class="two columns"><div>content</div></div>
+          <div class="two columns"><div>space-evenly</div></div>
+        </div>
+        <div class="row" style="justify-content: space-between">
+          <div class="two columns"><div>justify</div></div>
+          <div class="two columns"><div>content</div></div>
+          <div class="two columns"><div>space-between</div></div>
+        </div>
+      </div>
+      <pre><code>&lt;div class="container"&gt;
+  &lt;div class="row" style="justify-content: center"&gt;
+    &lt;div class="two columns"&gt;&lt;div&gt;justify&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="two columns"&gt;&lt;div&gt;content&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="two columns"&gt;&lt;div&gt;center&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row" style="justify-content: space-evenly"&gt;
+    &lt;div class="two columns"&gt;&lt;div&gt;justify&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="two columns"&gt;&lt;div&gt;content&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="two columns"&gt;&lt;div&gt;space-evenly&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row" style="justify-content: space-between"&gt;
+    &lt;div class="two columns"&gt;&lt;div&gt;justify&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="two columns"&gt;&lt;div&gt;content&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="two columns"&gt;&lt;div&gt;space-between&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
       <hr/>
     </div>
 
@@ -453,7 +497,7 @@
     <!-- Navbar -->
     <div id="navbar">
       <h5 class="u-uppcase">Navigation bar</h5>
-      <p>While not strictly speaking a HTML element in its own right the navigation bar is a specialisation of a list of links. In Skeletal you can apply a <code>navbar</code> class to such a list and it will be styled as a horisontal list of elements instead of a regular list. This is how the navigation bar on this site was made, and can look like this:</p>
+      <p>While not strictly speaking an HTML element in its own right the navigation bar is a specialisation of a list of links. In Skeletal you can apply a <code>navbar</code> class to such a list and it will be styled as a horizontal list of elements instead of a regular list. This is how the navigation bar on this site was made, and can look like this:</p>
       <ul class="navbar">
         <li><a href="#intro">Introduction</a></li>
         <li><a href="#typography">Typography</a></li>
@@ -461,7 +505,7 @@
         <li class="u-pull-right"><a href="#utilities">Utilities</a></li>
         <li><a href="#lists">Lists</a></li>
       </ul>
-      <p>Note that you can also use <code>u-pull-right</code> from the next section to place elements to the right of the navbar. It only needs to be applied to the first element that is supposed to be on the right hand side.</p>
+      <p>Note that you can also use <code>u-pull-right</code> from the next section to place elements to the right of the navbar. It only needs to be applied to the first element that is supposed to be on the right hand side. Since the navbar also uses a flex box you can also use the same method to space the elements out as you see fit.</p>
       <pre><code>&lt;ul class="navbar"&gt;
   &lt;li&gt;&lt;a href="#intro"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="#typography"&gt;Typography&lt;/a&gt;&lt;/li&gt;
@@ -476,14 +520,38 @@
     <div id="utilities">
       <h5 class="u-uppcase">Utilities</h5>
       <p>Skeletal has a number of small utility classes that act as easy-to-use helpers. Sometimes it's better to use a utility class than create a whole new class just to float an element. The list of utilites is slightly longer than in the original Skeleton and includes:</p>
-      <div class="row">
+      <div class="u-cf u-full-width">
         <div class="u-pull-right bordered"><code>u-pull-right</code> for floating right</div>
         <div class="u-pull-left bordered"><code>u-pull-left</code> for floating left</div>
       </div>
+      <div class="bordered"><code>u-cf</code> clears the floating of elements, used in the container above to stop this block flowing into it</div>
       <div class="u-full-width bordered"><code>u-full-width</code> for taking up all space</div>
       <div class="u-center bordered"><code>u-center</code> for centering content</div>
       <div class="u-uppcase bordered"><code>u-uppcase</code> to transform things to uppercase</div>
-      <div class="u-hero bordered"><code>u-hero</code> to create a hero slide<h5>That puts lots of lovely whitespace around your items!</h5><p>It's actually what's used on this page to create the title part.</p></div>
+      <div class="u-hero u-center bordered"><code>u-hero</code> to create a hero slide<h5>That puts lots of lovely whitespace around your items!</h5><p>It's actually what's used on this page to create the title part.</p></div>
+      <pre><code>&lt;div class="u-cf u-full-width"&gt;
+  &lt;div class="u-pull-right bordered"&gt;
+    &lt;code&gt;u-pull-right&lt;/code&gt; for floating right
+  &lt;/div&gt;
+  &lt;div class="u-pull-left bordered"&gt;
+    &lt;code&gt;u-pull-left&lt;/code&gt; for floating left
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="bordered"&gt;
+  &lt;code&gt;u-cf&lt;/code&gt; clears the floating of elements
+&lt;/div&gt;
+&lt;div class="u-full-width bordered"&gt;
+  &lt;code&gt;u-full-width&lt;/code&gt; for taking up all space
+&lt;/div&gt;
+&lt;div class="u-center bordered"&gt;
+  &lt;code&gt;u-center&lt;/code&gt; for centering content
+&lt;/div&gt;
+&lt;div class="u-uppcase bordered"&gt;
+  &lt;code&gt;u-uppcase&lt;/code&gt; to transform things to uppercase
+&lt;/div&gt;
+&lt;div class="u-hero u-center bordered"&gt;
+  &lt;code&gt;u-hero&lt;/code&gt; to create a hero slide
+&lt;/div&gt;</code></pre>
     </div>
   </div>
 </body>

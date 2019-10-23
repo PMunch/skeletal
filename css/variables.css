@@ -19,7 +19,7 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 :root {
   /* Globals */
-  --line-height: 170%;
+  --line-height: calc(1em * 1.7); /* Set this way so it can be used in calculations */
   --element-padding: 8px;
   --element-border: 1px;
   --element-height: calc(var(--line-height) + var(--element-padding)*2 + var(--element-border)*2);
@@ -80,7 +80,7 @@
   --placeholder-opacity: 0.8;
   /* Code */
   --code-color: var(--text-color);
-  --code-background-color: #F1F1F1;
+  --code-background-color: #FAFAFA;
   --code-border: var(--element-border) solid;
   --code-border-color: #E1E1E1;
   --code-border-radius: var(--border-radius);
