@@ -33,4 +33,6 @@
   top: -1px;
   background-color: #fff;
   z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
 }

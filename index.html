@@ -20,7 +20,7 @@
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/skeletal.css">
   <link rel="stylesheet" href="css/custom.css">
 
   <!-- Favicon
@@ -54,7 +54,7 @@
       </div>
     </section>
 
-      <ul class="navbar">
+      <ul class="navbar u-center">
       <li><a href="#grid"><h6>Grid</h6></a></li>
       <li><a href="#typography"><h6>Typography</h6></a></li>
       <li><a href="#buttons"><h6>Buttons</h6></a></li>
@@ -70,7 +70,7 @@
     <!-- Why use Skeletal -->
     <div>
       <h5 class="u-uppcase">Is Skeletal for you?</h5>
-      <p>Skeletal, like it's ancestor Skeleton, is perfect if you're embarking on a smaller project or if you just don't feel like you need all the bells and whistles of a larger framework. Skeletal only styles the most used HTML elements as well as including a grid, but that's often more than enough to get started. In fact <u>this site is built with Dynamic Skeleton</u>, and only has 30 lines of custom CSS to showcase the examples.</p>
+      <p>Skeletal, like it's ancestor Skeleton, is perfect if you're embarking on a smaller project or if you just don't feel like you need all the bells and whistles of a larger framework. Skeletal only styles the most used HTML elements as well as including a grid, but that's often more than enough to get started. In fact <u>this site is built with Skeletal</u>, and only has ~40 lines of custom CSS to showcase the examples and make the navbar stick when scrolling.</p>
       <p>Skeletal is an attempt at taking the original Skeleton and making it even more user friendly. It takes all the good parts of Skeleton, and pairs it with modern CSS utilities that allows the usage of variables. The project is split in two, the <em>"static"</em> part which contains all the selectors and such and the <em>"dynamic"</em> part which exposes variables that can easily be changed to change the look and feel.</p>
       <p>If you open your browsers CSS inspector and change the variables on the <code>:root</code> element you will see all the CSS change accordingly.</p>
       <h6>Skeletal vs. Skeleton</h6>
@@ -128,6 +128,34 @@
           <div class="one column">One</div>
         </div>
       </div>
+      <pre><code>&lt;!-- .container is main centered wrapper --&gt;
+&lt;div class="container"&gt;
+
+  &lt;!-- columns should be the immediate child of a .row --&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="one column"&gt;One&lt;/div&gt;
+    &lt;div class="eleven columns"&gt;Eleven&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- just use a number and class 'column' or 'columns' --&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="two columns"&gt;Two&lt;/div&gt;
+    &lt;div class="ten columns"&gt;Ten&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- there are a few shorthand columns widths as well --&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="one-third column"&gt;1/3&lt;/div&gt;
+    &lt;div class="two-thirds column"&gt;2/3&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="one-half column"&gt;1/2&lt;/div&gt;
+    &lt;div class="one-half column"&gt;1/2&lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;!-- Note: columns can be nested, but it's not recommended since Skeleton's grid has %-based gutters, meaning a nested grid results in variable with gutters (which can end up being *really* small on certain browser/device sizes) --&gt;</code></pre>
       <hr/>
     </div>
 
@@ -151,6 +179,22 @@
           </div>
         </div>
       </div>
+      <pre><code>&lt;!-- Standard Headings --&gt;
+&lt;h1&gt;Heading&lt;/h1&gt;
+&lt;h2&gt;Heading&lt;/h2&gt;
+&lt;h3&gt;Heading&lt;/h3&gt;
+&lt;h4&gt;Heading&lt;/h4&gt;
+&lt;h5&gt;Heading&lt;/h5&gt;
+&lt;h6&gt;Heading&lt;/h6&gt;
+
+&lt;!-- Base type size --&gt;
+&lt;p&gt;The base type is 16px over 1.7 line height (27px)&lt;/p&gt;
+
+&lt;!-- Other styled text tags --&gt;
+&lt;strong&gt;Bolded&lt;/strong&gt;
+&lt;em&gt;Italicized&lt;/em&gt;
+&lt;a&gt;Colored&lt;/a&gt;
+&lt;u&gt;Underlined&lt;/u&gt;</code></pre>
       <hr/>
     </div>
 
@@ -172,6 +216,17 @@
           <input class="button-primary" type="button" value="button input">
         </div>
       </div>
+      <pre><code>&lt;!-- Standard buttons --&gt;
+&lt;a class="button" href="#"&gt;Anchor button&lt;/a&gt;
+&lt;button&gt;Button element&lt;/button&gt;
+&lt;input type="submit" value="submit input"&gt;
+&lt;input type="button" value="button input"&gt;
+
+&lt;!-- Primary buttons --&gt;
+&lt;a class="button button-primary" href="#"&gt;Anchor button&lt;/a&gt;
+&lt;button class="button-primary"&gt;Button element&lt;/button&gt;
+&lt;input class="button-primary" type="submit" value="submit input"&gt;
+&lt;input class="button-primary" type="button" value="button input"&gt;</code></pre>
       <hr/>
     </div>
 
@@ -204,6 +259,34 @@
           <input class="button-primary" type="submit" value="Submit">
         </form>
       </div>
+      <pre><code>&lt;!-- The above form looks like this --&gt;
+&lt;form&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="six columns"&gt;
+      &lt;label for="exampleEmailInput"&gt;Your email&lt;/label&gt;
+      &lt;input class="u-full-width" type="email" placeholder="test@mailbox.com" id="exampleEmailInput"&gt;
+    &lt;/div&gt;
+    &lt;div class="six columns"&gt;
+      &lt;label for="exampleRecipientInput"&gt;Reason for contacting&lt;/label&gt;
+      &lt;select class="u-full-width" id="exampleRecipientInput"&gt;
+        &lt;option value="Option 1"&gt;Questions&lt;/option&gt;
+        &lt;option value="Option 2"&gt;Admiration&lt;/option&gt;
+        &lt;option value="Option 3"&gt;Can I get your number?&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;label for="exampleMessage"&gt;Message&lt;/label&gt;
+  &lt;textarea class="u-full-width" placeholder="Hi Dave …" id="exampleMessage"&gt;&lt;/textarea&gt;
+  &lt;label class="example-send-yourself-copy"&gt;
+    &lt;input type="checkbox"&gt;
+    &lt;span class="label-body"&gt;Send a copy to yourself&lt;/span&gt;
+  &lt;/label&gt;
+  &lt;input class="button-primary" type="submit" value="Submit"&gt;
+&lt;/form&gt;
+
+&lt;!-- Always wrap checkbox and radio inputs in a label and use a &lt;span class="label-body"&gt; inside of it --&gt;
+
+&lt;!-- Note: The class .u-full-width is just a utility class shorthand for width: 100% --&gt;</code></pre>
       <hr/>
     </div>
 
@@ -238,6 +321,19 @@
           </ol>
         </div>
       </div>
+      <pre><code>&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;
+    Item 2
+    &lt;ul&gt;
+      &lt;li&gt;Item 2.1&lt;/li&gt;
+      &lt;li&gt;Item 2.2&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Easily substitute any &lt;ul&gt; or an &lt;ol&gt; to get number lists or sublists --&gt;</code></pre>
       <hr/>
     </div>
 
@@ -250,6 +346,11 @@
   background-color: red;
 }</code></pre>
       </div>
+      <pre><code>&lt;pre&gt;&lt;code&gt;.some-class {
+  background-color: red;
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- Remember every whitespace and break will be preserved in a &lt;pre&gt;, including indentation in your code --&gt;</code></pre>
       <hr/>
     </div>
 
@@ -284,13 +385,37 @@
         </table>
       </div>
       <p>Be sure to use properly formed table markup with <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code> when building a <code>table</code>.</p>
+      <pre><code>&lt;table class="u-full-width"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Age&lt;/th&gt;
+      &lt;th&gt;Sex&lt;/th&gt;
+      &lt;th&gt;Location&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Dave Gamache&lt;/td&gt;
+      &lt;td&gt;26&lt;/td&gt;
+      &lt;td&gt;Male&lt;/td&gt;
+      &lt;td&gt;San Francisco&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Dwayne Johnson&lt;/td&gt;
+      &lt;td&gt;42&lt;/td&gt;
+      &lt;td&gt;Male&lt;/td&gt;
+      &lt;td&gt;Hayward&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
       <hr/>
     </div>
 
     <!-- Queries -->
     <div id="queries">
       <h5 class="u-uppcase">Media queries</h5>
-      <p>Skeletal uses media queries to serve its scalable grid, but also has a list of queries for convenience of styling your site across devices. The queries are mobile-first, meaning they target <code>min-width</code>. Mobile-first queries are how Dynamic Skeleton's grid is built and is the preferrable method of organizing CSS. It means all styles outside of a query apply to all devices, then larger devices are targeted for enhancement. This prevents small devices from having to parse tons of unused CSS. The sizes for the queries are:</p>
+      <p>Skeletal uses media queries to serve its scalable grid, but also has a list of queries for convenience of styling your site across devices. The queries are mobile-first, meaning they target <code>min-width</code>. Mobile-first queries are how Skeletal's grid is built and is the preferrable method of organizing CSS. It means all styles outside of a query apply to all devices, then larger devices are targeted for enhancement. This prevents small devices from having to parse tons of unused CSS. The sizes for the queries are:</p>
       <div class="row">
         <div class="six columns">
           <ul>
@@ -306,6 +431,22 @@
           </ul>
         </div>
       </div>
+      <pre><code>/* Mobile first queries */
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}</code></pre>
       <hr/>
     </div>
 
@@ -318,8 +459,16 @@
         <li><a href="#typography">Typography</a></li>
         <li><a href="#buttons">Buttons</a></li>
         <li class="u-pull-right"><a href="#utilities">Utilities</a></li>
+        <li><a href="#lists">Lists</a></li>
       </ul>
-      <p>Note that you can also use <code>u-pull-right</code> from the next section to place elements to the right of the navbar.</p>
+      <p>Note that you can also use <code>u-pull-right</code> from the next section to place elements to the right of the navbar. It only needs to be applied to the first element that is supposed to be on the right hand side.</p>
+      <pre><code>&lt;ul class="navbar"&gt;
+  &lt;li&gt;&lt;a href="#intro"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#typography"&gt;Typography&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#buttons"&gt;Buttons&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="u-pull-right"&gt;&lt;a href="#utilities"&gt;Utilities&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#lists"&gt;Lists&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
       <hr/>
     </div>
 

@@ -1,5 +1,5 @@
 /*
-* Dynamic Skeleton V1.0.0
+* Skeletal V1.0.0
 * Copyright 2019, Peter Munch-Ellingsen
 * skeleton.peterme.net
 * Free to use under the MIT license.
@@ -205,7 +205,8 @@ textarea {
      -moz-appearance: none;
           appearance: none; }
 textarea {
-  min-height: var(--textarea-min-height); }
+  min-height: var(--textarea-min-height);
+  line-height: var(--line-height); }
 input[type="email"]:focus,
 input[type="number"]:focus,
 input[type="search"]:focus,
@@ -271,7 +272,8 @@ pre > code {
   color: var(--code-block-color);
   background: var(--code-block-background-color);
   border: var(--code-block-border) var(--code-block-border-color);
-  border-radius: var(--code-block-border-radius); }
+  border-radius: var(--code-block-border-radius);
+  overflow-x: auto; }
 
 
 /* Tables
@@ -324,7 +326,8 @@ form {
 .u-pull-left {
   float: left!important; }
 .u-center {
-  text-align: center; }
+  text-align: center;
+  justify-content: center; }
 .u-uppcase {
   text-transform: uppercase; }
 .u-hero > * {
@@ -336,12 +339,14 @@ form {
   padding-top: var(--hero-padding);
   margin-bottom: var(--hero-padding); }
 
+
 /* Navbar
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 ul.navbar {
   list-style-type: none;
   margin: 4rem 0;
   padding: 0;
+  padding-bottom: calc(0.2em + 1vmin);
   overflow: hidden;
   border-top: var(--navbar-border-top);
   border-bottom: var(--navbar-border-bottom); }
@@ -350,11 +355,22 @@ ul.navbar > li {
   float: left;
   margin-bottom: 0; }
 
+ul.navbar > li.u-pull-right {
+  flex-grow: 1;
+  text-align: right; }
+
 ul.navbar > li a {
   display: block;
-  text-align: center;
-  padding: calc(var(--font-size)) calc(var(--font-size)*1.5);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: calc(0.3rem + 1vmin);
   text-decoration: none; }
+
+@media (min-width: 550px) {
+  ul.navbar > li a {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem; }
+}
 
 ul.navbar > li a > * {
   margin: 0!important; }
@@ -389,7 +405,6 @@ near the relevant code. For example, if you wanted to change the styles for butt
 on small devices, paste the mobile query code up in the buttons section and style it
 there.
 */
-
 
 /* Larger than mobile */
 @media (min-width: 400px) {}
@@ -489,5 +504,4 @@ there.
 
   .offset-by-one-half.column,
   .offset-by-one-half.columns     { margin-left: 52%; }
-
 }
