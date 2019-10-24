@@ -32,8 +32,8 @@
   /* Basics */
   --container-max-width: 800px;
   --text-color: #222;
-  --link-color: #1EAEDB;
-  --link-color-hover: #0FA0CE;
+  --link-color: var(--main-color);
+  --link-color-hover: var(--activated-color);
   --background-color: #fff;
   --font-family: "Taviraj", serif;
   --font-size: 1.6rem;
