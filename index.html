@@ -639,10 +639,14 @@
   </div>
   <script>
     function setVariable(variable, value, rawvalue) {
+      var element = document.getElementById(variable);
+      var initialposition = element.getBoundingClientRect();
       document.documentElement.style.setProperty(variable, value);
       if (typeof rawvalue !== 'undefined') {
-        document.getElementById(variable).value = rawvalue;
+        element.value = rawvalue;
       }
+      var endposition = element.getBoundingClientRect();
+      window.scrollBy(endposition.left - initialposition.left, endposition.top - initialposition.top);
     }
   </script>
 </body>
